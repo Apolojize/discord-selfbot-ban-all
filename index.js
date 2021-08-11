@@ -33,9 +33,9 @@ client.login(config.token).catch(e => { //here we log to the token present in 'c
 client.on('ready', () => { //the script start directly after the login connect
     console.log("     > Connected :D".green)
     console.log(`     > `.white+`${client.user.tag}`.yellow)
-    if(!client.guilds.has(config.guildid)) return console.log("The guild id present in "+red+'config.json'+white+" is invalid."+red) //we look if the guild id in 'config.json' is valid
+    if(!client.guilds.has(config.guildid)) return console.log("The guild id present in ".red+'config.json'.white+" is invalid.".red) //we look if the guild id in 'config.json' is valid
     let guild = client.guilds.get(config.guildid) 
-    if(!guild) return console.log("The guild id present in "+red+'config.json'+white+" is invalid."+red) //we look if the guild is valid
+    if(!guild) return console.log("The guild id present in ".red+'config.json'.white+" is invalid.".red) //we look if the guild is valid
     if(!guild.me.hasPermission("BAN_MEMBERS")) return console.log("You don't have the permission for ban members :/".red) //we check if the token logged have the permission to ban in the guild
     guild.fetchMembers().then(g => { //we fetch all members to stock all in the cache
         if(!g) return console.log("Error occured, try again".red)
